@@ -31,6 +31,13 @@ class GuestBook {
     return $this->stmt->fetchall();
   }
 
+  function get_all () {
+    $this->stmt = $this->pdo->prepare(
+      "SELECT * FROM `guestbook` ORDER BY `datetime` DESC"
+    );
+    $this->stmt->execute();
+    return $this->stmt->fetchall();
+  }
   // (D) SAVE GUEST BOOK ENTRY
   function save ($pid, $email, $name, $comment, $date=null) {
     if ($date==null) { $date = date("Y-m-d H:i:s"); }

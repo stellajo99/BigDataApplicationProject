@@ -1,34 +1,16 @@
 import csv
 import os
-def read_names(gender = "girl"):
-    names_list = []
-    dir = os.getcwd()
-    os.chdir("data/")
-    file = open(gender+"_names.txt", "r")
 
-    with open(gender+"_names.txt", "r") as f:
+os.chdir("data/")
+
+def read_file(filename):
+    with open(filename+".txt", "r") as f:
         content = f.readlines()
-    # you may also want to remove whitespace characters like `\n` at the end of each line
     content = [x.strip().lower() for x in content]
-    # print(content)
     return content
 
-
 import random
-import string
 
-
-def specific_string(length):
-    sample_string = 'pqrstuvwxy'  # define the specific string
-    # define the condition for random string
-    result = ''.join((random.choice(sample_string)) for x in range(length))
-    # print(" Randomly generated string is: ", result)
-
-def make_id(name, length=6):
-    result = ''.join((random.choice(name)) for x in range(length))
-    list_form = []
-    list_form.append(result)
-    return list_form
 
 def make_id2(name, length=2):
     result = [(random.choice('1234567890')) for x in range(length)]
@@ -36,19 +18,31 @@ def make_id2(name, length=2):
         name+=str(i)
     list_form = []
     list_form.append(name)
-    return list_form
+    return name
 
-names= read_names()
-ids = []
-for name in names:
-    ids.append(make_id2(name))
+names= read_file('girl_names')
+ids = [make_id2(name) for name in names]
 
+# pwds = []
+passwords = read_file('password')
+# for pwd in passwords:
+#     listp = []
+#     listp.append(pwd)
+#     pwds.append(listp)
+#     listp=[]
+age = read_file('age')
+gender = read_file('gender')
+nulls = read_file('null')
 # field names
-fields = ['id']
+fields = ['personid','username', 'password', 'age', 'gender']
 print(ids)
+
+zipped = zip(nulls, ids, passwords, age, gender)
+
+len_zipped = list(zipped)[:201]
 with open('ids.csv', 'w', newline='') as f:
     # using csv.writer method from CSV package
     write = csv.writer(f)
 
     write.writerow(fields)
-    write.writerows(ids)
+    write.writerows(len_zipped)
