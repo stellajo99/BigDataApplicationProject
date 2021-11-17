@@ -1,4 +1,3 @@
-Name,Location,country,Price for 2,Dining Rating,Delivery Rating,food,Dining Rating Count
 Yaa Mohaideen Briyani,Pallavaram,Chinese,500,4.3,4.3,SpringRoll Dimsum ,1500
 Sukkubhai Biriyani,Alandur,Korean,1000,4.4,4.1,Japche Bulgogi ,3059
 SS Hyderabad Biryani,Kodambakkam,Chinese,500,4.3,4.4,Dumplings Wontons ,1361

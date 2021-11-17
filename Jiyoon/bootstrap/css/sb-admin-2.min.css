@@ -9111,8 +9111,8 @@ a:focus {
   animation-timing-function: opacity cubic-bezier(0, 1, 0.4, 1);
 }
 .bg-gradient-primary {
-  background-color: #F2D0A9;
-  background-image: linear-gradient(180deg, #F2D0A9 10%, #8E7DBE 100%);
+  background-color: #D88C9A;
+  background-image: linear-gradient(180deg, #D88C9A 10%, #8E7DBE 100%);
   background-size: cover;
 }
 .bg-gradient-secondary {
@@ -9924,17 +9924,22 @@ a:focus {
   }
 }
 .bg-login-image {
-  background: url(https://source.unsplash.com/K4mSJ7kc0As/600x800);
+  background: url(../img/jelp.png);
+  background-position: center;
+  background-size: cover;
+}
+.login-image {
+  background: url(../img/jelp.png);
   background-position: center;
   background-size: cover;
 }
 .bg-register-image {
-  background: url(https://source.unsplash.com/Mv9hjnEUHR4/600x800);
+  background: url(../img/jelp.png);
   background-position: center;
   background-size: cover;
 }
 .bg-password-image {
-  background: url(https://source.unsplash.com/oWTW-jNGl9I/600x800);
+  background: url(../img/jelp.png);
   background-position: center;
   background-size: cover;
 }
