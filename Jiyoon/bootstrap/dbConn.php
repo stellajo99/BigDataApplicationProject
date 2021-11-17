@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost","root","","guestbook");
+$db = mysqli_connect("localhost","root","","team05");
 
 if(!$db)
 {
