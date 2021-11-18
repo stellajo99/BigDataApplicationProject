@@ -1,0 +1,101 @@
+create table restaurant(
+  rest_id int not null AUTO_INCREMENT,
+  name varchar(100),
+  location varchar(100),
+  country varchar(100),
+  avg_price float,
+  avg_rating float, 
+  primary key(rest_id)
+);
+
+insert into restaurant values(NULL,"Yaa Mohaideen Briyani","Pallavaram","Chinese",25.0,4.3);
+insert into restaurant values(NULL,"Sukkubhai Biriyani","Alandur","Chinese",50.0,4.4);
+insert into restaurant values(NULL,"SS Hyderabad Biryani","Kodambakkam","Chinese",25.0,4.3);
+insert into restaurant values(NULL,"KFC","Perambur","Chinese",25.0,4.0);
+insert into restaurant values(NULL,"Tasty Kitchen","Perambur","Western",22.5,4.2);
+insert into restaurant values(NULL,"Dine N Fun","Medavakkam","Dessert",22.5,4.1);
+insert into restaurant values(NULL,"Cafe Arabica","Anna Nagar East","Korean",40.0,4.3);
+insert into restaurant values(NULL,"Savoury Sea Shell","Anna Nagar East","Korean",70.0,4.2);
+insert into restaurant values(NULL,"Sangeetha Veg Restaurant","T. Nagar","Japanese",40.0,4.4);
+insert into restaurant values(NULL,"McDonald's","Velachery","Chinese",25.0,3.9);
+insert into restaurant values(NULL,"Kovai Alankar Vilas","Anna Nagar East","Japanese",35.0,4.4);
+insert into restaurant values(NULL,"Hotel Al Buhari","Vadapalani","Korean",17.5,4.0);
+insert into restaurant values(NULL,"Dindigul Thalappakatti","Porur","Chinese",45.0,4.3);
+insert into restaurant values(NULL,"Hotel Paramount","Kilpauk","Dessert",25.0,4.3);
+insert into restaurant values(NULL,"Arab Street","Ashok Nagar","Korean",40.0,4.1);
+insert into restaurant values(NULL,"Abid's","Chetpet","Chinese",60.0,4.2);
+insert into restaurant values(NULL,"Malabar Biriyani Center","Aminijikarai","Western",22.5,4.1);
+insert into restaurant values(NULL,"Velidis","Ramapuram","Japanese",25.0,4.2);
+insert into restaurant values(NULL,"Mami Tiffen Stall","Mylapore","Dessert",20.0,4.3);
+insert into restaurant values(NULL,"Supriya Andhra Restaurant","Thuraipakkam","Western",32.5,4.2);
+insert into restaurant values(NULL,"Eating Circles","Alwarpet","Dessert",12.5,4.7);
+insert into restaurant values(NULL,"Salem RR Briyani Unavagam","Velachery","Western",27.5,4.2);
+insert into restaurant values(NULL,"V4 Midnight Dhabba","Mogappair","Chinese",27.5,4.3);
+insert into restaurant values(NULL,"Bakya Veg Restaurant","West Mambalam","Dessert",20.0,4.2);
+insert into restaurant values(NULL,"Midnight Madness","Adyar","Dessert",22.5,4.1);
+insert into restaurant values(NULL,"Hotel Crescent","Nungambakkam","Japanese",25.0,4.3);
+insert into restaurant values(NULL,"Zaitoon","Royapettah","Western",45.0,4.1);
+insert into restaurant values(NULL,"Nithya Amirtham","Mylapore","Chinese",25.0,4.2);
+insert into restaurant values(NULL,"Shri Balaajee Bhavan","Chromepet","Japanese",15.0,4.3);
+insert into restaurant values(NULL,"Kakada Ramprasad","Kilpauk","Chinese",22.5,4.3);
+insert into restaurant values(NULL,"Rasavid","Velachery","Japanese",40.0,3.9);
+insert into restaurant values(NULL,"Buhari","Chromepet","Western",40.0,3.5);
+insert into restaurant values(NULL,"Domino's Pizza","Kolathur","Chinese",20.0,4.0);
+insert into restaurant values(NULL,"Shree Mithai","Chetpet","Dessert",15.0,4.6);
+insert into restaurant values(NULL,"New Andhra Meals Hotel","Valasaravakkam","Chinese",30.0,3.9);
+insert into restaurant values(NULL,"Punjabi Nation","Guindy","Western",35.0,4.0);
+insert into restaurant values(NULL,"Krishna's Dosa Kadai","Mogappair","Chinese",17.5,4.2);
+insert into restaurant values(NULL,"Al Sham","Potheri","Western",37.5,3.9);
+insert into restaurant values(NULL,"Orange Wok","Nungambakkam","Dessert",50.0,4.2);
+insert into restaurant values(NULL,"Ghuma Ghumalu","Navallur","Western",25.0,4.2);
+insert into restaurant values(NULL,"KPS Ambur Biriyani","Mogappair","Dessert",12.5,3.6);
+insert into restaurant values(NULL,"Pedreno's","Mylapore","Korean",60.0,4.3);
+insert into restaurant values(NULL,"Madras Biryani","Perambur","Korean",20.0,4.0);
+insert into restaurant values(NULL,"Palmshore","Egmore","Korean",50.0,4.4);
+insert into restaurant values(NULL,"Hotel Sri Vairam","Porur","Dessert",15.0,4.0);
+insert into restaurant values(NULL,"Sea Emperor","Madipakkam","Japanese",45.0,3.8);
+insert into restaurant values(NULL,"Andhikkadai","Velachery","Japanese",10.0,4.6);
+insert into restaurant values(NULL,"Paradise Biryani","Thiruvanmiyur","Chinese",45.0,4.2);
+insert into restaurant values(NULL,"A2B - Adyar Ananda Bhavan","Velachery","Dessert",30.0,3.6);
+insert into restaurant values(NULL,"Copper Kitchen","Saligramam","Japanese",50.0,4.2);
+insert into restaurant values(NULL,"Fazari","Chromepet","Dessert",37.5,4.2);
+insert into restaurant values(NULL,"Guntur Gongura","Sholinganallur","Korean",25.0,4.1);
+insert into restaurant values(NULL,"Andhra Ruchulu","Porur","Western",15.0,4.1);
+insert into restaurant values(NULL,"Brownie Heaven","Royapettah","Dessert",17.5,4.9);
+insert into restaurant values(NULL,"Hotel Junior Kuppanna","T. Nagar","Western",35.0,4.3);
+insert into restaurant values(NULL,"Mezze","Alwarpet","Dessert",35.0,4.7);
+insert into restaurant values(NULL,"Pantry d'or","Anna Nagar East","Western",37.5,4.4);
+insert into restaurant values(NULL,"Maggevala - Curly Cravings","Kilpauk","Chinese",20.0,4.0);
+insert into restaurant values(NULL,"Amadora Gourmet Ice Cream & Sorbet","Nungambakkam","Japanese",25.0,4.8);
+insert into restaurant values(NULL,"Eatza Pizza","Nungambakkam","Chinese",30.0,3.7);
+insert into restaurant values(NULL,"Samco","Velachery","Chinese",40.0,4.3);
+insert into restaurant values(NULL,"Sree Akshayam","Anna Nagar East","Dessert",35.0,4.3);
+insert into restaurant values(NULL,"Biriyani Palace","Porur","Japanese",30.0,4.0);
+insert into restaurant values(NULL,"Pumpkin Tales","Alwarpet","Dessert",90.0,4.5);
+insert into restaurant values(NULL,"Sandy's Chocolate Laboratory","Nungambakkam","Dessert",70.0,4.5);
+insert into restaurant values(NULL,"Hotel Saravana Bhavan","Perungudi","Dessert",27.5,2.7);
+insert into restaurant values(NULL,"Little Italy","Besant Nagar","Korean",75.0,4.7);
+insert into restaurant values(NULL,"Ciclo Cafe","Kotturpuram","Japanese",55.0,4.3);
+insert into restaurant values(NULL,"Big Bang Theory - Bar & Kitchen","Kodambakkam","Western",80.0,4.1);
+insert into restaurant values(NULL,"Onesta","Semmancheri","Japanese",30.0,4.4);
+insert into restaurant values(NULL,"Fusilli Reasons","Kilpauk","Chinese",20.0,4.7);
+insert into restaurant values(NULL,"Food @ Finger","Royapuram","Japanese",35.0,4.1);
+insert into restaurant values(NULL,"Shri Rajasthani Dhaba","Anna Nagar West","Japanese",25.0,4.5);
+insert into restaurant values(NULL,"Lucky Da Punjabi Dhabba","Perungudi","Dessert",45.0,4.3);
+insert into restaurant values(NULL,"Al-Najeeb Nawab Of Kebab","Kilpauk","Western",25.0,4.1);
+insert into restaurant values(NULL,"Skewered","Valasaravakkam","Dessert",20.0,4.3);
+insert into restaurant values(NULL,"Biryani House","Mogappair","Korean",27.5,4.1);
+insert into restaurant values(NULL,"Shaack","Anna Nagar East","Western",45.0,4.1);
+insert into restaurant values(NULL,"Hotel Pandian","Mogappair","Chinese",25.0,4.0);
+insert into restaurant values(NULL,"Al Raabias Biriyani","Perambur","Japanese",25.0,3.9);
+insert into restaurant values(NULL,"Soy Soi","Kotturpuram","Dessert",70.0,4.7);
+insert into restaurant values(NULL,"Hot Pot China","Perungudi","Korean",50.0,4.2);
+insert into restaurant values(NULL,"Thaqwa Biryani","Ambattur","Japanese",22.5,4.0);
+insert into restaurant values(NULL,"Fruit Shop On Greams Road","Thousand Lights","Dessert",17.5,4.5);
+insert into restaurant values(NULL,"BOATS - Based On A True Story","Besant Nagar","Japanese",90.0,4.2);
+insert into restaurant values(NULL,"Amelie's","Alwarpet","Western",45.0,4.3);
+insert into restaurant values(NULL,"Urban Spatula","Anna Nagar West","Korean",40.0,4.4);
+insert into restaurant values(NULL,"Oxygen","Potheri","Chinese",25.0,4.0);
+insert into restaurant values(NULL,"Shree Konar Vilas","Purasavakkam","Dessert",25.0,4.1);
+insert into restaurant values(NULL,"Subway","Anna Nagar West","Chinese",25.0,4.4);
+insert into restaurant values(NULL,"Pind","Velachery","Dessert",45.0,4.3);
