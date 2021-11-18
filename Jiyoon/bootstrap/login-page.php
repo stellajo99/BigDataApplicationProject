@@ -25,8 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = $_POST["password"];
     }
-
-    // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
 

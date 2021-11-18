@@ -1,51 +1,39 @@
 <?php include("sidebar.php") ?>
-<html>
 
-<head>
-  <title>Restraunt Rank</title>
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-</head>
 <body>
 
-
-<div class= "container">
-<form action="rank_country.php" method="POST">
-  <h1 class="text-center">  Search Restraunts By Style</h1><br>
-    <div class="form-row align-items-center">
-      <div class="col-auto my-1">
-        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-        <select class="form-control form-control-sm" id="inlineFormCustomSelect" name="country">
-          <option selected value="Korean">Korean</option>
-          <option value="Japanese">Japanese</option>
-          <option value="Chinese">Chinese</option>
-          <option value="Dessert">Dessert</option>
-          <option value="Western">Western</option>
-        </select>
+  <div class="container">
+    <form action="rank_award.php" method="GET">
+      <h1 class="text-center"> View Awarded Restaurant!</h1><br>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="form-control form-control-sm" id="inlineFormCustomSelect" name="award_name">
+            <option value="New York Times">New York Times</option>
+            <option value="The Post">The Post</option>
+            <option value="Lux Award">Lux Award</option>
+          </select>
+        </div>
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary" onclick="onclick(event)">Submit</button>
+        </div>
       </div>
-      <div class="col-auto my-1">
 
-        <button type="submit" class="btn btn-primary" onclick="onclick(event)">Submit</button>
-      </div>
-    </div>
-
-</form>
-</div>
+    </form>
+  </div>
 
   <script>
-
-  function onclick(event) {
-    event.preventDefault();
-  }
+    function onclick(event) {
+      event.preventDefault();
+    }
   </script>
 
 
 </body>
-</html>
-<html>
+
 <?php
 require_once "login-config.php";
-error_reporting(E_ALL ^ E_NOTICE);
-$distriction = mysqli_real_escape_string($link, $_POST['country']);
+$rankby = mysqli_real_escape_string($link, $_GET['award_name']);
 
 $sql = "
 SELECT rank() over (order by visitor_year desc) as tourspot_rank, name, pay
@@ -55,8 +43,9 @@ ORDER BY tourspot_rank;";
 
 $sql = "
 SELECT *
-FROM restaurant
-WHERE country = ?;";
+FROM award
+WHERE award_by = ?
+ORDER BY award_name;";
 
 $stmt = mysqli_stmt_init($link);
 
@@ -65,35 +54,36 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
   echo mysqli_error($link);
 } else {
   //Bind parameters to the placeholder
-  mysqli_stmt_bind_param($stmt, "s", $distriction);
+  mysqli_stmt_bind_param($stmt, "s", $rankby);
   mysqli_stmt_execute($stmt);
   $res = mysqli_stmt_get_result($stmt);
 
 
   echo "<br><div class='container'>";
 
+  echo "<h4>Restaurants Awarded by << <b>" . $rankby . " </b>>></h4><br>";
   echo "<table class='table'>";
   echo "   <thead>
             <tr>
-            <th scope='col'>Style</th>
-            <th scope='col'>Restaurant</th>
-            <th scope='col'>Location</th>
-            <th scope='col'>Rating</th>
+            <th scope='col'>Award ID</th>
+            <th scope='col'>Award Name</th>
+            <th scope='col'>Award By</th>
+            <th scope='col'>Award For</th>
             </tr>
             </thead>";
   echo "<tbody>";
 
   while ($row = mysqli_fetch_assoc($res)) {
-    $name = $row['name'];
-    $country = $row['country'];
-    $location = $row['location'];
-    $rating = $row['avg_rating'];
+    $award_id = $row['award_id'];
+    $award_name = $row['award_name'];
+    $award_by = $row['award_by'];
+    $award_for = $row['award_for'];
 
     echo "<tr>";
-    echo "<td>" . $country . "</td>";
-    echo "<td>" . $name . "</td>";
-    echo "<td>" . $location . "</td>";
-    echo "<td>" . $rating . "</td>";
+    echo "<td>" . $award_id . "</td>";
+    echo "<td>" . $award_name . "</td>";
+    echo "<td>" . $award_by . "</td>";
+    echo "<td>" . $award_for . "</td>";
     echo "</tr>";
   }
   echo "</tbody>";
@@ -105,4 +95,5 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 
 mysqli_free_result($res);
 mysqli_close($link); ?>
+</body>
 </html>

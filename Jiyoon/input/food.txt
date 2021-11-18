@@ -1,0 +1,24 @@
+food_name,food_country,food_ingred,food_allergies
+Bibimbap,Korean,rice carrot lettus,egg
+Bulgogi,Korean,meat carrot,egg
+Japche,Korean,potato carrrot garlic,none
+Tteokbokki,Korean,ricecake pepper garlic cheese,none
+Sushi,Japanese,fish rice wasabi,none
+Donburi,Japanese,rice chicken beef,egg
+Ramen,Japanese,noodle pork carrot,egg
+Tempura,Japanese,flour fish shrimp,egg
+Omuraisu,Japanese,egg rice carrot,egg
+Udon,Japanese,flour tempura,none
+Dumplings,Chinese,rice carrot beef pork,egg peanut
+SpringRoll,Chinese,ricepaper carrot beef pork,egg
+Dimsum,Chinese,ricepaper carrot beef pork,peanut
+Wontons,Chinese,ricepaper carrot beef pork shrimp,none
+Salad,Western,lettus olive chicken,egg peanut
+Hamburger,Western,lettus bread chicken,egg
+Sandwich,Western,lettus bread chicken shrimp,egg peanut
+Pizza,Western,flour olive tomato bazil,none
+Steak,Western,meat carrot potato,none
+Cupcake,Dessert,flour sugar icing,egg peanut
+Donut,Dessert,flour sugar icing,egg peanut
+Cookie,Dessert,flour sugar icing,egg
+Brownies,Dessert,flour sugar icing chocolate,egg peanut

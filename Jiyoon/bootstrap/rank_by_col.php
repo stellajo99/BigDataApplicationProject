@@ -1,48 +1,13 @@
-<?php include("sidebar.php") ?>
-
-<body>
-  <div class='container'>
-    <div class='card-body'>
-      <form action="rank_all.php" method="GET">
-        <br>
-        <h1 class="text-center">Rank Restaurants by feature</h1><br>
-        <div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="orderby" value="avg_price">
-            <label class="form-check-label">Price</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="orderby" value="avg_rating">
-            <label class="form-check-label">Rating</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="orderby" value="review_count">
-            <label class="form-check-label"># of Reviews</label>
-          </div>
-        </div>
-        <div class="pull-right">
-          <button type="submit" class="btn btn-primary pull-right">Submit</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-</body>
 
 <?php
-
+include("sidebar.php");
 require_once "login-config.php";
 
 $orderby = $_GET['orderby'];
 
-if (!$orderby){
-  $orderby = 'avg_price';
-}
-
 $sql = "
 SELECT * FROM restaurant
 ORDER BY ".$orderby;
-
 if ($orderby == 'avg_price'){
   $sql = $sql." ;";
 }
@@ -88,18 +53,12 @@ if ($res) {
     echo "<td><i class='fa fa-star'/>" . $avg_rating . "</td>";
     echo "<td>" . $review_count . "</td>";
     echo "</tr>";
-
   }
-
   echo "</tbody>";
   echo "</table>";
   echo "</div></div></div>";
-  
   mysqli_free_result($res);
 } else {
-  printf("Could not retrieve records. %s\n");
+  printf("Could not retrieve records. %s\n", mysqli_error($link));
 }
 mysqli_close($link);
-?>
-
-</html>

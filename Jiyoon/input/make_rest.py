@@ -7,12 +7,11 @@ reviews = pd.read_csv('rest.csv', sep=',', encoding = 'unicode_escape')
 import secrets
 
 foo = ['Korean', 'Japanese', 'Chinese', 'Western', 'Dessert']
-# print(secrets.choice(foo))
 Korean = ['Bibimbap', 'Bulgogi', 'Japche', 'Tteokbokki']
 Japanese = ['Sushi', 'Donburi', 'Ramen', 'Tempura', 'Omuraisu', 'Udon']
 Chinese = ['Dumplings', 'SpringRoll', 'Dimsum', 'Wontons']
 Western = ['Salad', 'Hamburger','Sandwich', 'Pizza', 'Steak']
-Dessert = ['cupcake', 'donut', 'cookie','brownies', 'waffles', 'pancakes']
+Dessert = ['Cupcake', 'Donut', 'Cookie','Brownies']
 
 reviews['country'] = np.array([secrets.choice(foo) for x in range(reviews.shape[0])])
 food = []

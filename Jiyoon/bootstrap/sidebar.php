@@ -9,11 +9,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Buttons</title>
+  <link rel="icon" href="img/jelp.png">
+
+  <title>JELP</title>
 
   <!-- Custom styles for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.min.css?a" rel="stylesheet">
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -24,6 +26,18 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
+  <style>
+    div.scrolldiv {
+      margin: 4px, 4px;
+      padding: 4px;
+      width: 100%;
+      height: 500px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      text-align: justify;
+    }
+  </style>
+
 </head>
 
 <body id="page-top">
@@ -32,7 +46,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -69,9 +83,10 @@
         <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="rank_all.php">Rank by topic</a>
-            <a class="collapse-item" href="rank_country.php">Rank by country</a>
-            <a class="collapse-item" href="rank_award.php">Rank by award</a>
+            <a class="collapse-item" href="rank_all.php?orderby=avg_rating">Rank by topic</a>
+            <a class="collapse-item" href="rank_country.php?country=Korean">Rank by country</a>
+            <a class="collapse-item" href="rank_award.php?award_name=New+York+Times">Rank by award</a>
+            <a class="collapse-item" href="rank_basic.php">rank_basic</a>
           </div>
         </div>
       </li>
@@ -85,7 +100,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="edit-rest.php">Colors</a>
+            <a class="collapse-item" href="award_show_all.php">award_show_all</a>
             <a class="collapse-item" href="utilities-border.html">Borders</a>
             <a class="collapse-item" href="utilities-animation.html">Animations</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>
