@@ -8,16 +8,6 @@
 <?php
 require_once "login-config.php";
 
-
-$sql = "
-SELECT rank() over (order by (0.6*avg_price + 0.4*tourism) desc) as gu_rank, gu, hotel, tourism
-FROM visitor_gu
-ORDER BY gu_rank;";
-
-$sql = "
-SELECT rank() over (order by avg_price) desc) as avg_price
-FROM restaurant
-ORDER BY avg_price;";
 $sql = "
 SELECT * FROM restaurant
 ORDER BY avg_rating, avg_price DESC;
@@ -66,11 +56,6 @@ if($res){
 }
 mysqli_free_result($res);
 
-$sql = "
-SELECT gu, sum(visitor_year) as sum
-FROM major_tourspot
-GROUP BY gu
-ORDER BY sum(visitor_year) desc;";
 $sql = "
 SELECT country, AVG(avg_price) as avg_price, AVG(avg_rating) as avg_rating
 FROM restaurant

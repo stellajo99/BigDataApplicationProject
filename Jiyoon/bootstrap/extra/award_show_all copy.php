@@ -7,11 +7,11 @@
 
   $sql = "
 SELECT * FROM award
-ORDER BY award_id DESC";
+ORDER BY award_name";
   $res = mysqli_query($link, $sql);
   if ($res) {
 
-    echo "<div class='container scrolldiv'>
+    echo "<br><br><div class='container scrolldiv'>
   <div class='card-body scroll1'>
   <div class='table-responsive'>
   <table class='table table-bordered'>
@@ -51,19 +51,6 @@ ORDER BY award_id DESC";
     printf("Could not retrieve records. %s\n", mysqli_error($link));
   }
   mysqli_close($link);
-  include("insert_data.html");
-  include("update_data_before.html");
-  ?>
-  
-
-  <?php
-  if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction'])) {
-    func();
-  }
-  function func()
-  {
-    // do stuff     
-  }
   ?>
 </body>
 

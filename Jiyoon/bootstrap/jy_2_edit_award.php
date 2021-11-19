@@ -13,9 +13,16 @@
 
   $res = mysqli_query($link, $sql);
   if ($res) {
+    echo "
+    <div class='container'>
+    <div class='card-body'>";
+    include("insert_data.html");
+    include("update_data_before.html");
+    include("delete_data1.html");
+    echo "</div></div>";
 
     echo "<div class='container scrolldiv'>
-  <div class='card-body scroll1'>
+  <div class='card-body'>
   <div class='table-responsive'>
   <table class='table table-striped table-dark table-bordered'>
   <thead class='thead-dark'>
@@ -57,20 +64,9 @@
   
   mysqli_close($link);
   echo "<br>";
-  include("insert_data.html");
-  include("update_data_before.html");
-  ?>
-  
 
-  <?php
-  if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction'])) {
-    func();
-  }
-  function func()
-  {
-    // do stuff     
-  }
   ?>
+
 </body>
 
 </html>

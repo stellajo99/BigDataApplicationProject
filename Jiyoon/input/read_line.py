@@ -10,5 +10,5 @@ for line in Lines:
     # print("insert into restaurant values({});".format(line.strip()))
     line = line.split(',')
     # print(line)
-    print('insert into restaurant values(NULL,"{}","{}","{}",{},{}, "{}", {});'.format(line[0], line[1], line[2], float(line[3])/20, float(line[4]), line[6], int(line[7])))
+    print('INSERT INTO restaurant (name,location,country,avg_price,avg_rating,menu,review_count) values ("{}", "{}", "{}", {}, {}, "{}", {});'.format(line[0], line[1], line[2], float(line[3])/20, float(line[4]), line[6].split()[0], int(line[7])))
 

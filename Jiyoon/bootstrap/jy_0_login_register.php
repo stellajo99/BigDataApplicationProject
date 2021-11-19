@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "login-config.php";
  
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
         $username_err = "Username can only contain letters, numbers, and underscores.";
     } else{
-        $sql = "SELECT id FROM users WHERE username = ?";
+        $sql = "SELECT user_id FROM user WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $param_username);
@@ -36,8 +36,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";     
-    } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -54,16 +52,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO user (username, pwd) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
             
             $param_username = $username;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            $param_password = $password; 
             
             if(mysqli_stmt_execute($stmt)){
-                header("location: login-page.php");
+                header("location: jy_0_login_main.php");
             } else{
                 echo "Threre was an error! Please try again later :>";
             }

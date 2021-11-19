@@ -3,7 +3,7 @@
 <body>
   <div class='container'>
     <div class='card-body'>
-      <form action="rest_show_all.php" method="GET">
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
         <br>
         <h1 class="text-center">Allergic to someting?</h1><br>
         <p><b>Choose What you are allgergic to and we will show you restaurants that do not contain those products!</b></p>

@@ -282,7 +282,6 @@ Ovenfresh Pizza's and Cake's,Velachery,Dessert,500,4.1,3.3,Cupcake Cookie ,454
 Episode 23,Anna Nagar East,Dessert,800,4.1,3.8,Brownies Brownies ,490
 Krishnavillasam - The Home Of Classics,Adyar,Western,850,3.0,3.5,Hamburger Hamburger ,499
 The Kandyan,Besant Nagar,Western,450,4.4,4.5,Hamburger Sandwich ,482
-Famous Theory,"Hotel Centre Point, Sholinganallur",Dessert,1200,3.9,3.7,Cookie Cookie ,492
 Nungambakkam Chaat Corner,Nungambakkam,Chinese,200,4.1,3.5,Dumplings Dumplings ,511
 Hotel Sennthur,Thousand Lights,Korean,450,4.1,4.1,Tteokbokki Tteokbokki ,507
 China Town,Gopalapuram,Chinese,1200,4.1,4.3,Dimsum SpringRoll ,468
@@ -290,7 +289,6 @@ Pally Tastee Fast Food,Perambur,Western,850,3.9,4.0,Hamburger Steak ,198
 The Mayflower,T. Nagar,Chinese,1000,4.2,3.8,SpringRoll SpringRoll ,436
 Novelty Tea House,Sowcarpet,Korean,300,4.2,3.9,Bulgogi Bulgogi ,383
 Locofeast,Nungambakkam,Japanese,800,4.0,3.7,Udon Donburi ,400
-Inzy?Âs Garden Restaurant,Egatoor,Western,650,4.0,3.3,Salad Hamburger ,348
 Wok Monk,Anna Nagar West,Western,1200,4.6,3.9,Steak Sandwich ,459
 Broken Bridge Cafe,Somerset Greenways,Dessert,1200,4.3,3.9,Brownies Cookie ,444
 Firdouse,Triplicane,Dessert,800,3.7,4.5,Cookie Donut ,528

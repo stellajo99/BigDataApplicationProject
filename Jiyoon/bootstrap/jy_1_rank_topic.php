@@ -3,7 +3,7 @@
 <body>
   <div class='container'>
     <div class='card-body'>
-      <form action="rank_all.php" method="GET">
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
         <br>
         <h1 class="text-center">Rank Restaurants by feature</h1><br>
         <div class="form-row align-items-center">

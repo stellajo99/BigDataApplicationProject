@@ -7,7 +7,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     exit;
 }
 
-require_once "config.php";
+require_once "login-config.php";
 
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
@@ -26,39 +26,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST["password"];
     }
     if (empty($username_err) && empty($password_err)) {
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $sql = "SELECT user_id, username, pwd FROM user WHERE username = '" . $username . "'";
 
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
+        $res = mysqli_query($link, $sql);
+        if ($res) {
+            $row = mysqli_fetch_assoc($res);
+            if ($row) {
+                if ($row['pwd'] == $password) {
+                    session_start();
 
-            $param_username = $username;
+                    $_SESSION["loggedin"] = true;
+                    $_SESSION["id"] = $id;
+                    $_SESSION["username"] = $username;
 
-            if (mysqli_stmt_execute($stmt)) {
-                mysqli_stmt_store_result($stmt);
-
-                if (mysqli_stmt_num_rows($stmt) == 1) {
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if (mysqli_stmt_fetch($stmt)) {
-                        if (password_verify($password, $hashed_password)) {
-                            session_start();
-
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;
-
-                            header("location: rank_all.php?orderby=avg_price");
-                        } else {
-                            $login_err = "Invalid username or password.";
-                        }
-                    }
+                    header("location: jy_1_rank_topic.php?orderby=avg_price");
                 } else {
                     $login_err = "Invalid username or password.";
                 }
-            } else {
-                echo "Oops! Something went wrong. Please try again later.";
             }
-            mysqli_stmt_close($stmt);
+            else {
+                $login_err = "Invalid username or password.";
+            }
+            mysqli_free_result($res);
+        } else {
+            echo "Oops! Something went wrong. Please try again later.";
         }
+        
     }
     mysqli_close($link);
 }
@@ -77,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body class="bg-gradient-primary">
     <div class="container">
-
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
                 <br>

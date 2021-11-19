@@ -3,7 +3,7 @@
 <body>
 
   <div class="container">
-    <form action="rank_award.php" method="GET">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET">
       <h1 class="text-center"> View Awarded Restaurant!</h1><br>
       <div class="form-row align-items-center">
         <div class="col-auto my-1">

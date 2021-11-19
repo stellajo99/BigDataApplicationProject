@@ -9,7 +9,6 @@ if (!$link) {
   $res = mysqli_query($link, $sql);
 }
 if ($res) {
-  echo "Fdsafds";
     header("location: award_edit_all.php");
 } else {
   echo "Could not retrieve records. %s\n" . mysqli_error($link);
