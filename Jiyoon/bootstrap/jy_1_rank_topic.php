@@ -57,9 +57,9 @@ if ($res) {
 
   echo "<div class='container'>";
   echo "<h4>Restaurants Ranked by << <b>" . $orderby . " </b>>></h4><br>
-  <div class='card-body scrolldiv'>
+  <div class='card-body scrolldiv scrollbar-morpheus-den'>
   <div class='table-responsive'>
-  <table class='table table-bordered w-auto'>
+  <table class='table table-bordered table-striped table-dark w-auto'>
    <thead>
       <tr>
         <th scope='col' class='text-center'>Restaurant Name</th>

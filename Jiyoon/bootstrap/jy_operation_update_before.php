@@ -14,7 +14,7 @@ if (!$link) {
     $award_for = $row['award_for'];
     $award_to = $row['rest_id'];
     $award_year = $row['award_year'];
-    include("update_data_page.php");
+    include("jy_update_data_page.php");
   } else {
     echo "Could not retrieve records. %s\n" . mysqli_error($link);
   }

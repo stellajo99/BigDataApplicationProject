@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">

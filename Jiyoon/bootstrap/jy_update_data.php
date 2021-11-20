@@ -19,7 +19,7 @@
         <div class="modal-body">
           <div id="id32">
 
-            <form class="modal-content animate" action="operation_update.php" method="post">
+            <form class="modal-content animate" action="jy_operation_update.php" method="post">
               <input type="hidden" name="form_name" value="insert">
               <div class="container">
                 <label for="award_name"><b>Award Name</b></label>

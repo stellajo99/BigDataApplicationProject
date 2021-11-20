@@ -37,11 +37,11 @@
   }
   else{
       $sql = "
-  SELECT *
-  FROM food
-  INNER JOIN restaurant 
-  ON food.food_name = restaurant.menu
-  WHERE NOT food.food_allergies LIKE '%" . $allergic_to . "%';";
+      SELECT *
+      FROM food
+      INNER JOIN restaurant 
+      ON food.food_name = restaurant.menu
+      WHERE NOT food.food_allergies LIKE '%" . $allergic_to . "%';";
   }
 
 
@@ -49,11 +49,11 @@
   if ($res) {
 
     echo "
-    <div class='container scrolldiv'>
-      <div class='card-body scroll1'>
+    <div class='container scrolldiv scrollbar-near-moon'>
+      <div class='card-body'>
         <div class='table-responsive'>
-          <table class='table table-striped table-dark table-bordered'>
-            <thead class='thead-dark'>
+          <table class='table table-striped table-primary table-bordered'>
+            <thead>
               <tr>
               <th scope='col'>Restaurant Name</th>
               <th scope='col'>Menu</th>

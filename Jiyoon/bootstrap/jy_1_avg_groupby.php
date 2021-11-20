@@ -12,9 +12,9 @@ ORDER BY SUM(avg_price) DESC;
 $res = mysqli_query($link, $sql);
 if($res){
 
-    echo "<br><div class='container scrolldiv'>";
-    echo "<h1 class='text-center'>Average Price for Restraunts</h1><br>";
-    echo "<table class='table'>";
+    echo "<br><div class='container scrolldiv scrollbar-morpheus-den'>";
+    echo "<h1 class='text-center'>Average Price & Rating by Food Style</h1><br>";
+    echo "<table class='table table-bordered table-striped table-info'>";
     echo"   <thead>
             <tr>
             <th scope='col'>country</th>
@@ -54,10 +54,10 @@ ORDER BY location;
 ";
 $res = mysqli_query($link, $sql);
 if($res){
-    echo "<h1 class='text-center'>Average Price for Menu</h1><br>";
-    echo "<br><div class='container scrolldiv'>";
+    echo "<h1 class='text-center'>Average Price & Rating by Menu</h1><br>";
+    echo "<br><div class='container scrolldiv scrollbar-juicy-peach'>";
 
-    echo "<table class='table'>";
+    echo "<table class='table table-bordered table-striped table-danger'>";
     echo"   <thead>
             <tr>
             <th scope='col'>Menu</th>
@@ -97,10 +97,10 @@ ORDER BY menu;
 ";
 $res = mysqli_query($link, $sql);
 if($res){
-    echo "<h1 class='text-center'>Average Price for Menu</h1><br>";
-    echo "<br><div class='container scrolldiv'>";
+    echo "<br><h1 class='text-center'>Average Price & Rating by Location</h1><br>";
+    echo "<br><div class='container scrolldiv scrollbar-near-moon'>";
 
-    echo "<table class='table'>";
+    echo "<table class='table table-bordered table-striped table-primary'>";
     echo"   <thead>
             <tr>
             <th scope='col'>location</th>

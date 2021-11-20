@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: login-welcome.php");
+    header("location: jy_1_rank_topic.php?orderby=avg_price");
     exit;
 }
 
@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     session_start();
 
                     $_SESSION["loggedin"] = true;
-                    $_SESSION["id"] = $id;
                     $_SESSION["username"] = $username;
 
                     header("location: jy_1_rank_topic.php?orderby=avg_price");
@@ -63,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link href="css/sb-admin-2.min.css?a" rel="stylesheet">
+    <link href="css/sb-admin.css?a" rel="stylesheet">
     <link rel="icon" href="img/jelp.png">
 
 </head>

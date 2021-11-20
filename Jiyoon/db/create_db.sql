@@ -813,6 +813,7 @@ INSERT INTO review (user_id, rest_id, content, rating) VALUES (145, 68, "I'm pro
 INSERT INTO review (user_id, rest_id, content, rating) VALUES (17, 47, "Kids pizza is always a hit too with lots of great side dish options for the kiddos!", 2);
 INSERT INTO review (user_id, rest_id, content, rating) VALUES (55, 40, "Service is perfect and the family atmosphere is nice to see.", 2);
 
+
 DROP TABLE IF EXISTS food;
 CREATE TABLE food(
     food_id int(11) AUTO_INCREMENT,

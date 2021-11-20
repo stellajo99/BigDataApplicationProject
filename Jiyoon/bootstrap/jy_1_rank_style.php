@@ -7,7 +7,7 @@
       <h1 class="text-center"> Search Restraunts By Style</h1><br>
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
-          <select class="form-control form-control-sm" id="inlineFormCustomSelect" name="country">
+          <select class="form-control form-control-sm" id="select_country" name="country">
             <option selected value="Korean">Korean</option>
             <option value="Japanese">Japanese</option>
             <option value="Chinese">Chinese</option>
@@ -35,10 +35,10 @@
   $country = mysqli_real_escape_string($link, $_GET['country']);
 
   $sql = "
-SELECT *
-FROM restaurant
-WHERE country = ?
-ORDER BY avg_rating DESC, avg_price;";
+    SELECT *
+    FROM restaurant
+    WHERE country = ?
+    ORDER BY avg_rating DESC, avg_price;";
 
   $stmt = mysqli_stmt_init($link);
 
@@ -51,9 +51,9 @@ ORDER BY avg_rating DESC, avg_price;";
     $res = mysqli_stmt_get_result($stmt);
 
 
-    echo "<br><div class='container scrolldiv'>";
+    echo "<br><div class='container scrolldiv scrollbar-morpheus-den'>";
     echo "<h4>Restaurant style << <b>" . $country . " </b>>></h4><br>";
-    echo "<table class='table'>";
+    echo "<table class='table table-bordered table-striped table-dark '>";
     echo "   <thead>
             <tr>
             <th scope='col'>Restaurant Name</th>
@@ -86,7 +86,6 @@ ORDER BY avg_rating DESC, avg_price;";
     echo "</tbody>";
     echo "</table>";
     echo "</div>";
-
     echo "<br>";
   }
 

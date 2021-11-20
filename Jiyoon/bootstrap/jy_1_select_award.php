@@ -7,7 +7,7 @@
       <h1 class="text-center"> View Awarded Restaurant!</h1><br>
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
-          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <label class="mr-sm-2 sr-only" for="award_name_id">Preference</label>
           <select class="form-control form-control-sm" id="award_name_id" name="award_name">
             <option value="All">All</option>
             <option value="New York Times">New York Times</option>
@@ -65,12 +65,12 @@ if ($rankby == 'All') {
     $res = mysqli_stmt_get_result($stmt);
   }
 }
-echo "<br><div class='container scrolldiv'>";
+echo "<br><div class='container scrolldiv scrollbar-morpheus-den'>";
 
 echo "<h4>Restaurants Awarded by << <b>" . $rankby . " </b>>></h4><br>";
-echo "<table class='table'>";
+echo "<table class='table table-bordered table-striped table-dark '>";
 echo "    
-<thead class='thead-dark'>
+<thead>
 <tr>
   <th scope='col'>Award Name</th>
   <th scope='col'>Award To</th>
@@ -94,7 +94,6 @@ while ($row = mysqli_fetch_assoc($res)) {
   echo "<td>" . $award_by . "</td>";
   echo "<td>" . $award_for . "</td>";
   echo "<td>" . $award_year . "</td>";
-
   echo "</tr>";
 }
 echo "</tbody>";

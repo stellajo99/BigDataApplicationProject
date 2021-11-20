@@ -15,7 +15,7 @@
 
   <!-- Custom styles for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="css/sb-admin-2.min.css?a" rel="stylesheet">
+  <link href="css/sb-admin.css" rel="stylesheet">
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -50,6 +50,7 @@
     table.table-fit tbody td,
     table.table-fit tfoot td {
       width: auto !important;
+    }
   </style>
 
 </head>
@@ -60,19 +61,20 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="jy_0_login_main.php">
+        <div class="sidebar-brand-icon">
+          <img src="img/jelp.png" alt="JELP icon" width="50%" height="50%">
         </div>
         <div class="sidebar-brand-text mx-3">JELP</div>
       </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
+      <!-- Divider -->
+      <hr class="sidebar-divider">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <?php include("login-logout-button.html") ?>
@@ -113,7 +115,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
             <a class="collapse-item" href="jy_2_edit_award.php">Edit award data</a>
-            <a class="collapse-item" href="jy_2_allergic.php">Alergic to somethig?</a>
+            <a class="collapse-item" href="jy_2_allergic.php?allergic_to=Egg">Alergic to somethig?</a>
 
           </div>
         </div>
