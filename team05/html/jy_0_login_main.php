@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <span class="invalid-feedback"><?php echo $password_err; ?></span>
                                         </div>
 
-                                        <p>Don't have an account? <a href="jy_0_login_register.php">Create an Account!</a></p>
+                                        <p>Don't have an account? <a href="jy_0_login_register.php">Create an Account!</a>.</p>
 
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-user btn-block" value="Login">
