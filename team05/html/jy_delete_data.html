@@ -1,0 +1,28 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_data">
+  Delete Award
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="delete_data" tabindex="-1" role="dialog" aria-labelledby="delete_dataLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete_dataLabel">Which award do you want to delete?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form class="modal-content animate" action="jy_operation_delete.php" method="post">
+            <div class="container">
+              <label for="award_name"><b>Award ID</b></label>
+              <input type="number" placeholder="Enter District" class="form-control" name="award_id" required>
+              <br>
+              <button type="submit" class="btn btn-danger">Delete!</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
