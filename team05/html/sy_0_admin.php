@@ -142,7 +142,7 @@ if (!empty($result->num_rows) && $result->num_rows > 0) {
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
-                                    <form action="sy_0_changeuserpw.php" method="POST">
+                                    <form action="sy_0_changepw.php" method="POST">
                                         <div class="row no-gutters align-items-center">                                        
                                             <div class="col mr-2">                                            
                                                     <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">
