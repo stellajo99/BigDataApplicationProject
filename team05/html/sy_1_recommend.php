@@ -3,6 +3,12 @@ require_once('sy_config.php');$category = $_POST['category'];
 $lowerPrice = $_POST['lower'];
 $upperPrice = $_POST['upper'];
 
+session_start();
+  $username = "";
+  if( isset( $_SESSION['username'] ) ) {
+    $username =  $_SESSION['username'];
+  }
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $sql = "INSERT INTO filter(category, lowerPrice, upperPrice) values('$category', $lowerPrice, $upperPrice);";

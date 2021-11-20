@@ -1,6 +1,12 @@
 <?php
 require_once('sy_config.php');
 
+session_start();
+  $username = "";
+  if( isset( $_SESSION['username'] ) ) {
+    $username =  $_SESSION['username'];
+  }
+
 $sql = "SELECT *, rank() over (order by avg_rating desc) as rating_rank FROM restaurant WHERE restaurant.country = (select category from filter order by filter.filter_id desc limit 1) AND avg_price >= (select lowerPrice from filter order by filter.filter_id desc limit 1) AND avg_price <= (select upperPrice from filter order by filter.filter_id desc limit 1);";
 $result = $mysqli->query($sql);
 $reviewdata = [];
