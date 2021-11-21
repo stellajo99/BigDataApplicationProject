@@ -1,5 +1,6 @@
-<?php include("login-config.php") ?>
 
+<?php include("login-config.php") ?>
+<?php include("sidebar.php") ?>
 <?php
 if (!$link) {
   die('could not connect:');
