@@ -1,5 +1,10 @@
 /*실행환경 설정: user 생성 후 권한 부여(user id: team05, password: team05)*/
-create user 'team05'@'%' identified by 'team05';
+
+/*만약 user 'team05'가 이미 존재해서 오류가 날 경우
+drop user 'team05'@'localhost';
+위의 sql query 포함시켜서 실행
+*/
+create user 'team05'@'localhost' identified by 'team05';
 grant all privileges on *.* to 'team05'@'localhost';
 FLUSH PRIVILEGES;
 
@@ -9,8 +14,8 @@ create database team05;
 
 
 /*테이블 생성&레코드 삽입 부분*/
-DROP TABLE IF EXISTS user;
 use team05;
+DROP TABLE IF EXISTS user;
 CREATE TABLE user (
     user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
