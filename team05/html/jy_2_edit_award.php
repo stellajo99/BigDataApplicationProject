@@ -5,6 +5,11 @@
 
   require_once "login-config.php";
 
+  if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: jy_1_rank_topic.php?orderby=avg_price");
+    exit;
+  }
+
   $sql = "
   SELECT *
   FROM award
@@ -64,11 +69,10 @@
     echo "</table>";
     echo "</div></div></div>";
     mysqli_free_result($res);
-
   } else {
     printf("Could not retrieve records. %s\n", mysqli_error($link));
   }
-  
+
   mysqli_close($link);
   echo "<br>";
 

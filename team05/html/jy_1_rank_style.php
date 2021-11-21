@@ -1,4 +1,10 @@
-<?php include("sidebar.php") ?>
+<?php include("sidebar.php");
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+  header("location: jy_1_rank_topic.php?orderby=avg_price");
+  exit;
+}
+?>
 
 <body>
 

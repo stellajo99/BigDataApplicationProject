@@ -35,6 +35,10 @@
 
 require_once "login-config.php";
 
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+  header("location: jy_1_rank_topic.php?orderby=avg_price");
+  exit;
+}
 $orderby = $_GET['orderby'];
 
 if (!$orderby) {

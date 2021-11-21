@@ -34,6 +34,11 @@
 
 <?php
 require_once "login-config.php";
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+  header("location: jy_1_rank_topic.php?orderby=avg_price");
+  exit;
+}
 $rankby = mysqli_real_escape_string($link, $_GET['award_name']);
 
 if ($rankby == 'All') {

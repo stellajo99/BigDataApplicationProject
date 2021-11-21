@@ -26,17 +26,22 @@
   <?php
 
   require_once "login-config.php";
+
+  if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: jy_1_rank_topic.php?orderby=avg_price");
+    exit;
+  }
+
   $allergic_to = mysqli_real_escape_string($link, $_GET['allergic_to']);
-  if ($allergic_to=='Both'){
+  if ($allergic_to == 'Both') {
     $sql = "
       SELECT *
       FROM food
       INNER JOIN restaurant 
       ON food.food_name = restaurant.menu
       WHERE food.food_allergies ='none';";
-  }
-  else{
-      $sql = "
+  } else {
+    $sql = "
       SELECT *
       FROM food
       INNER JOIN restaurant 

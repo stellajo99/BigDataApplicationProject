@@ -1,6 +1,12 @@
 <?php
 
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+  header("location: jy_1_rank_topic.php?orderby=avg_price");
+  exit;
+}
 require_once "login-config.php";
+
 include("sidebar.php");
 
 $sql = "
@@ -10,38 +16,37 @@ GROUP BY country
 ORDER BY SUM(avg_price) DESC;
 ";
 $res = mysqli_query($link, $sql);
-if($res){
+if ($res) {
 
-    echo "<br><div class='container scrolldiv scrollbar-morpheus-den'>";
-    echo "<h1 class='text-center'>Average Price & Rating by Food Style</h1><br>";
-    echo "<table class='table table-bordered table-striped table-info'>";
-    echo"   <thead>
+  echo "<br><div class='container scrolldiv scrollbar-morpheus-den'>";
+  echo "<h1 class='text-center'>Average Price & Rating by Food Style</h1><br>";
+  echo "<table class='table table-bordered table-striped table-info'>";
+  echo "   <thead>
             <tr>
             <th scope='col'>country</th>
             <th scope='col'>average price</th>
             <th scope='col'>average rating</th>
             </tr>
             </thead>";
-    echo "<tbody>";
+  echo "<tbody>";
 
-    while($row = mysqli_fetch_assoc($res)){
+  while ($row = mysqli_fetch_assoc($res)) {
 
-      $country = $row['country'];
-      $avg_price = number_format((float)$row['avg_price'], 2, '.', '');
-      $avg_rating = number_format((float)$row['avg_rating'], 2, '.', '');
+    $country = $row['country'];
+    $avg_price = number_format((float)$row['avg_price'], 2, '.', '');
+    $avg_rating = number_format((float)$row['avg_rating'], 2, '.', '');
 
 
-      echo "<td>" . $country . "</td>";
-      echo "<td>$ " . $avg_price . "</td>";
-      echo "<td><i class='fa fa-star'/> " . $avg_rating . "</td>";
-      echo "</tr>";
-
-    }
-    echo "</tbody>";
-    echo "</table>";
-    echo "</div>";
-}else{
-    printf("Could not retrieve records. %s\n", mysqli_error($link));
+    echo "<td>" . $country . "</td>";
+    echo "<td>$ " . $avg_price . "</td>";
+    echo "<td><i class='fa fa-star'/> " . $avg_rating . "</td>";
+    echo "</tr>";
+  }
+  echo "</tbody>";
+  echo "</table>";
+  echo "</div>";
+} else {
+  printf("Could not retrieve records. %s\n", mysqli_error($link));
 }
 
 $sql = "
@@ -53,38 +58,37 @@ GROUP BY food_name
 ORDER BY location;
 ";
 $res = mysqli_query($link, $sql);
-if($res){
-    echo "<h1 class='text-center'>Average Price & Rating by Menu</h1><br>";
-    echo "<br><div class='container scrolldiv scrollbar-juicy-peach'>";
+if ($res) {
+  echo "<h1 class='text-center'>Average Price & Rating by Menu</h1><br>";
+  echo "<br><div class='container scrolldiv scrollbar-juicy-peach'>";
 
-    echo "<table class='table table-bordered table-striped table-danger'>";
-    echo"   <thead>
+  echo "<table class='table table-bordered table-striped table-danger'>";
+  echo "   <thead>
             <tr>
             <th scope='col'>Menu</th>
             <th scope='col'>average price</th>
             <th scope='col'>average rating</th>
             </tr>
             </thead>";
-    echo "<tbody>";
+  echo "<tbody>";
 
-    while($row = mysqli_fetch_assoc($res)){
+  while ($row = mysqli_fetch_assoc($res)) {
 
-      $food_name = $row['food_name'];
-      $avg_price = number_format((float)$row['avg_price'], 2, '.', '');
-      $avg_rating = number_format((float)$row['avg_rating'], 2, '.', '');
+    $food_name = $row['food_name'];
+    $avg_price = number_format((float)$row['avg_price'], 2, '.', '');
+    $avg_rating = number_format((float)$row['avg_rating'], 2, '.', '');
 
 
-      echo "<td>" . $food_name . "</td>";
-      echo "<td>$ " . $avg_price . "</td>";
-      echo "<td><i class='fa fa-star'/> " . $avg_rating . "</td>";
-      echo "</tr>";
-
-    }
-    echo "</tbody>";
-    echo "</table>";
-    echo "</div>";
-}else{
-    printf("Could not retrieve records. %s\n", mysqli_error($link));
+    echo "<td>" . $food_name . "</td>";
+    echo "<td>$ " . $avg_price . "</td>";
+    echo "<td><i class='fa fa-star'/> " . $avg_rating . "</td>";
+    echo "</tr>";
+  }
+  echo "</tbody>";
+  echo "</table>";
+  echo "</div>";
+} else {
+  printf("Could not retrieve records. %s\n", mysqli_error($link));
 }
 
 $sql = "
@@ -96,37 +100,36 @@ GROUP BY food_name
 ORDER BY menu;
 ";
 $res = mysqli_query($link, $sql);
-if($res){
-    echo "<br><h1 class='text-center'>Average Price & Rating by Location</h1><br>";
-    echo "<br><div class='container scrolldiv scrollbar-near-moon'>";
+if ($res) {
+  echo "<br><h1 class='text-center'>Average Price & Rating by Location</h1><br>";
+  echo "<br><div class='container scrolldiv scrollbar-near-moon'>";
 
-    echo "<table class='table table-bordered table-striped table-primary'>";
-    echo"   <thead>
+  echo "<table class='table table-bordered table-striped table-primary'>";
+  echo "   <thead>
             <tr>
             <th scope='col'>location</th>
             <th scope='col'>average price</th>
             <th scope='col'>average rating</th>
             </tr>
             </thead>";
-    echo "<tbody>";
+  echo "<tbody>";
 
-    while($row = mysqli_fetch_assoc($res)){
+  while ($row = mysqli_fetch_assoc($res)) {
 
-      $location = $row['location'];
-      $avg_price = number_format((float)$row['avg_price'], 2, '.', '');
-      $avg_rating = number_format((float)$row['avg_rating'], 2, '.', '');
+    $location = $row['location'];
+    $avg_price = number_format((float)$row['avg_price'], 2, '.', '');
+    $avg_rating = number_format((float)$row['avg_rating'], 2, '.', '');
 
 
-      echo "<td>" . $location . "</td>";
-      echo "<td>$ " . $avg_price . "</td>";
-      echo "<td><i class='fa fa-star'/> " . $avg_rating . "</td>";
-      echo "</tr>";
-
-    }
-    echo "</tbody>";
-    echo "</table>";
-    echo "</div>";
-}else{
-    printf("Could not retrieve records. %s\n", mysqli_error($link));
+    echo "<td>" . $location . "</td>";
+    echo "<td>$ " . $avg_price . "</td>";
+    echo "<td><i class='fa fa-star'/> " . $avg_rating . "</td>";
+    echo "</tr>";
+  }
+  echo "</tbody>";
+  echo "</table>";
+  echo "</div>";
+} else {
+  printf("Could not retrieve records. %s\n", mysqli_error($link));
 }
 mysqli_close($link);
