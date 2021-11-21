@@ -4,10 +4,11 @@ require_once "login-config.php";
 include("sidebar.php");
 
 $sql = "
-SELECT country, AVG(avg_price) as avg_price, AVG(avg_rating) as avg_rating, SUM(review_count) as review_count
+SELECT country, AVG(avg_price) as avg_price, AVG(avg_rating) as avg_rating
 FROM restaurant
 GROUP BY country
-ORDER BY country;";
+ORDER BY SUM(avg_price) DESC;
+";
 $res = mysqli_query($link, $sql);
 if($res){
 
@@ -19,7 +20,6 @@ if($res){
             <th scope='col'>country</th>
             <th scope='col'>average price</th>
             <th scope='col'>average rating</th>
-            <th scope='col'>total reviews</th>
             </tr>
             </thead>";
     echo "<tbody>";
@@ -29,13 +29,11 @@ if($res){
       $country = $row['country'];
       $avg_price = number_format((float)$row['avg_price'], 2, '.', '');
       $avg_rating = number_format((float)$row['avg_rating'], 2, '.', '');
-      $review_count = $row['review_count'];
 
 
       echo "<td>" . $country . "</td>";
       echo "<td>$ " . $avg_price . "</td>";
       echo "<td><i class='fa fa-star'/> " . $avg_rating . "</td>";
-      echo "<td>".$review_count."</td>";
       echo "</tr>";
 
     }
@@ -91,9 +89,12 @@ if($res){
 
 $sql = "
 SELECT location, AVG(avg_price) as avg_price, AVG(avg_rating) as avg_rating
-FROM restaurant
-GROUP BY location
-ORDER BY avg_price;";
+FROM food
+INNER JOIN restaurant
+ON food.food_name = restaurant.menu
+GROUP BY food_name
+ORDER BY menu;
+";
 $res = mysqli_query($link, $sql);
 if($res){
     echo "<br><h1 class='text-center'>Average Price & Rating by Location</h1><br>";

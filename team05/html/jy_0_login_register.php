@@ -120,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="login-page.php">Do you already have an account? Login!</a>
+                                <a class="small" href="jy_0_login_main.php">Do you already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

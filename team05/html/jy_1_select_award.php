@@ -22,6 +22,14 @@
 
     </form>
   </div>
+
+  <script>
+    function onclick(event) {
+      event.preventDefault();
+    }
+  </script>
+
+
 </body>
 
 <?php

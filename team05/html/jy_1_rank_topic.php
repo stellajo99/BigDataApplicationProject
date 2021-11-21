@@ -37,9 +37,19 @@ require_once "login-config.php";
 
 $orderby = $_GET['orderby'];
 
+if (!$orderby) {
+  $orderby = 'avg_price';
+}
+
 $sql = "
-SELECT RANK() OVER (ORDER BY " . $orderby." DESC) as ranking, name, location, country, avg_price, avg_rating, review_count
- FROM restaurant";
+SELECT * FROM restaurant
+ORDER BY " . $orderby;
+
+if ($orderby == 'avg_price') {
+  $sql = $sql . " ;";
+} else {
+  $sql = $sql . " DESC;";
+}
 
 
 $res = mysqli_query($link, $sql);
@@ -52,7 +62,6 @@ if ($res) {
   <table class='table table-bordered table-striped table-dark w-auto'>
    <thead>
       <tr>
-      <th scope='col' class='text-center'>Rank</th>
         <th scope='col' class='text-center'>Restaurant Name</th>
         <th scope='col' class='text-center'>Location</th>
         <th scope='col' class='text-center'>Type of food</th>
@@ -65,7 +74,6 @@ if ($res) {
 
   while ($row = mysqli_fetch_assoc($res)) {
 
-    $ranking = $row['ranking'];
     $name = $row['name'];
     $location = $row['location'];
     $country = $row['country'];
@@ -75,8 +83,7 @@ if ($res) {
 
 
     echo "<tr>";
-    echo "<td>" . $ranking . "</td>";
-    echo "<th>" . $name . "</th>";
+    echo "<th scope='row'>" . $name . "</th>";
     echo "<td>" . $location . "</td>";
     echo "<td>" . $country . "</td>";
     echo "<td>$ " . $avg_price . "</td>";
