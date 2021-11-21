@@ -22,6 +22,12 @@
     </form>
   </div>
 
+  <script>
+    function onclick(event) {
+      event.preventDefault();
+    }
+  </script>
+
   <?php
 
   require_once "login-config.php";
